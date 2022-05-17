@@ -15,14 +15,12 @@ namespace SkwurlBotFix.Bots.Commands
     {
         [Command("pp")]
         [Hidden]
-        [RequireRoles(RoleCheckMode.All, "Verified")]
         public async Task PP(CommandContext ctx)
         {
             await ctx.Channel.SendMessageAsync("AYOO").ConfigureAwait(false);
         }
 
         [Command("add")]
-        [RequireRoles(RoleCheckMode.All, "Verified")]
         [Hidden]
         [Description("Adds two numbers together")]
         public async Task Add(CommandContext ctx, int numOne, int numTwo)
@@ -51,7 +49,6 @@ namespace SkwurlBotFix.Bots.Commands
         }
 
         [Command("patrick")]
-        [RequireRoles(RoleCheckMode.Any, "Verified")]
         public async Task Patrick(CommandContext ctx)
         {
             await ctx.Channel.SendMessageAsync("https://tenor.com/view/butt-i-luv-patrick-yea-gif-13484694").ConfigureAwait(false);
@@ -65,7 +62,6 @@ namespace SkwurlBotFix.Bots.Commands
         }
 
         [Command("bungus")]
-        [RequireRoles(RoleCheckMode.Any, "Verified")]
         public async Task BUNGUS(CommandContext ctx)
         {
             var x = "https://tenor.com/view/wiggly-green-mushrooms-risk-of-rain2-gif-23657855";

@@ -19,7 +19,6 @@ namespace SkwurlBotFix.Bots.Commands
 
         [Command("vs")]
         [Hidden]
-        [RequireRoles(RoleCheckMode.Any, "Verified")]
         public async Task Join(CommandContext ctx)
         {
             var joinEmbed = new DiscordEmbedBuilder
@@ -57,7 +56,7 @@ namespace SkwurlBotFix.Bots.Commands
         }
 
         [Command("poll")]
-        [RequireRoles(RoleCheckMode.Any, "Moderator", "Admin", "Melon")]
+        [RequireUserPermissions(DSharpPlus.Permissions.Administrator)]
         public async Task Poll(CommandContext ctx, params string[] content)
         {
             var embed = new DiscordEmbedBuilder

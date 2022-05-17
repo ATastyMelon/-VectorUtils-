@@ -94,8 +94,6 @@ namespace SkwurlBotFix.Bots
 
         private Task Client_GuildAvailable(DiscordClient sender, GuildCreateEventArgs e)
         {
-            var _adminChannel = e.Guild.Channels.Values.First(x => x.Name == "admin-chat");
-
             sender.Logger.LogInformation(BotEventId, $"Guild available: {e.Guild.Name}");
 
             return Task.CompletedTask;
