@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\gredd\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\gredd\\.nuget\\packages"
+    ]
+  }
+}
