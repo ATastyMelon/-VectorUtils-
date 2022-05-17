@@ -14,16 +14,16 @@ using System.Threading.Tasks;
 using SkwurlBotFix.Bots.Commands;
 using DSharpPlus.Entities;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace SkwurlBotFix.Bots
 {
     public class Bot
     {
         public readonly EventId BotEventId = new EventId(42, "Skwurl-Bot");
-        public DiscordClient Client { get; private set; }
-        public CommandsNextExtension Commands { get; private set; }
+        public DiscordShardedClient Client { get; private set; }
+        public IReadOnlyDictionary<int, CommandsNextExtension> Commands;
 
-        private static DiscordChannel _adminChannel;
         private static int _beats;
 
         public async Task RunAsync()
@@ -49,9 +49,9 @@ namespace SkwurlBotFix.Bots
                 Intents = DiscordIntents.All
             };
 
-            Client = new DiscordClient(config);
+            Client = new DiscordShardedClient(config);
 
-            Client.UseInteractivity(new InteractivityConfiguration()
+            await Client.UseInteractivityAsync(new InteractivityConfiguration()
             {
                 PollBehaviour = PollBehaviour.KeepEmojis,
                 Timeout = TimeSpan.FromMinutes(5)
@@ -69,13 +69,16 @@ namespace SkwurlBotFix.Bots
                 //Services = services
             };
 
-            Commands = Client.UseCommandsNext(commandsConfig);
+            Commands = await Client.UseCommandsNextAsync(commandsConfig);
 
-            Commands.RegisterCommands<FunCommands>();
-            Commands.RegisterCommands<UserCommands>();
-            Commands.RegisterCommands<UtilCommands>();
-
-            await Client.ConnectAsync();
+            foreach(var cmd in Commands.Values)
+            {
+                cmd.RegisterCommands<FunCommands>();
+                cmd.RegisterCommands<UserCommands>();
+                cmd.RegisterCommands<UtilCommands>();
+            }
+            
+            await Client.StartAsync();
 
             await Task.Delay(-1);
         }
@@ -91,7 +94,7 @@ namespace SkwurlBotFix.Bots
 
         private Task Client_GuildAvailable(DiscordClient sender, GuildCreateEventArgs e)
         {
-            _adminChannel = e.Guild.Channels.Values.First(x => x.Name == "admin-chat");
+            var _adminChannel = e.Guild.Channels.Values.First(x => x.Name == "admin-chat");
 
             sender.Logger.LogInformation(BotEventId, $"Guild available: {e.Guild.Name}");
 
