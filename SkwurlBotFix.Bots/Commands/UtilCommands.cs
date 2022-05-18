@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DSharpPlus.CommandsNext;
@@ -65,19 +66,21 @@ namespace SkwurlBotFix.Bots.Commands
         [Command("nick")]
         [Description("Changes a members nickname")]
         [RequirePermissions(DSharpPlus.Permissions.ManageNicknames)]
-        public async Task ChangeNickname(CommandContext ctx, DiscordMember member, string newName)
+        public async Task ChangeNickname(CommandContext ctx, DiscordMember member, params string[] newName)
         {
             await ctx.TriggerTypingAsync();
+
+            string newString = string.Concat(newName);
 
             try
             {
                 await member.ModifyAsync(x =>
                 {
-                    x.Nickname = newName;
+                    x.Nickname = newString;
                     x.AuditLogReason = $"Changed by {ctx.User.Username} ({ctx.User.Id})";
                 });
 
-                await ctx.RespondAsync($"{member.Username} nickname changed to {newName}");
+                await ctx.RespondAsync($"{member.Username} nickname changed to {newString}");
             }
             catch (Exception)
             {
