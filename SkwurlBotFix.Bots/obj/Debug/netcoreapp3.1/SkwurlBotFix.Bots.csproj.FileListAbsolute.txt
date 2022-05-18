@@ -111,3 +111,15 @@ D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\runtime
 D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\DnsClient.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\MongoDB.LibMongocrypt.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\SharpCompress.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\Tars.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\Tars.MongoDB.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+D:\VSCodeProjects\SkwurlBotFix\SkwurlBotFix.Bots\bin\Debug\netcoreapp3.1\runtimes\win\native\mongocrypt.dll

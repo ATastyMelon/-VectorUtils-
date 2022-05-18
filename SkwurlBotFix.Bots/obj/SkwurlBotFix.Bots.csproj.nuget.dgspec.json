@@ -77,6 +77,14 @@
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "Tars": {
+              "target": "Package",
+              "version": "[1.4.4, )"
+            },
+            "Tars.MongoDB": {
+              "target": "Package",
+              "version": "[1.4.4, )"
             }
           },
           "imports": [

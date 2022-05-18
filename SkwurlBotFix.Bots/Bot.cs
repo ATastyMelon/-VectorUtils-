@@ -15,6 +15,9 @@ using SkwurlBotFix.Bots.Commands;
 using DSharpPlus.Entities;
 using System.Linq;
 using System.Collections.Generic;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+using Tars.Core;
 
 namespace SkwurlBotFix.Bots
 {
@@ -103,7 +106,7 @@ namespace SkwurlBotFix.Bots
         {
             _beats++;
             var x = new DiscordActivity($";help | <Vector> Utils");
-            await Client.UpdateStatusAsync(x, UserStatus.Online, DateTimeOffset.MaxValue);
+            await Client.UpdateStatusAsync(x, UserStatus.DoNotDisturb, DateTimeOffset.MaxValue);
         }
 
         public struct ConfigJson

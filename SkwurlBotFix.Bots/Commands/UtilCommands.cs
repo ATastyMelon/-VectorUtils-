@@ -12,6 +12,7 @@ namespace SkwurlBotFix.Bots.Commands
     {
         [Command("clear")]
         [Aliases("c")]
+        [Description("Clears a certain amount of messages from the chat it is used in")]
         [RequireUserPermissions(DSharpPlus.Permissions.Administrator)]
         [RequireBotPermissions(DSharpPlus.Permissions.Administrator)]
         public async Task ClearMessages(CommandContext ctx, int amount)
@@ -23,6 +24,7 @@ namespace SkwurlBotFix.Bots.Commands
 
         [Command("ban")]
         [Aliases("b")]
+        [Description("Bans a member permanently")]
         [RequireUserPermissions(DSharpPlus.Permissions.BanMembers)]
         [RequireBotPermissions(DSharpPlus.Permissions.BanMembers)]
         public async Task BanMembers(CommandContext ctx, DiscordMember member, string reason)
@@ -43,6 +45,7 @@ namespace SkwurlBotFix.Bots.Commands
 
         [Command("Kick")]
         [Aliases("k")]
+        [Description("Kicks a member from the server")]
         [RequireUserPermissions(DSharpPlus.Permissions.KickMembers)]
         [RequireBotPermissions(DSharpPlus.Permissions.KickMembers)]
         public async Task KickMembers(CommandContext ctx, DiscordMember member, string reason)
@@ -60,6 +63,7 @@ namespace SkwurlBotFix.Bots.Commands
         }
 
         [Command("nick")]
+        [Description("Changes a members nickname")]
         [RequirePermissions(DSharpPlus.Permissions.ManageNicknames)]
         public async Task ChangeNickname(CommandContext ctx, DiscordMember member, string newName)
         {
@@ -73,13 +77,11 @@ namespace SkwurlBotFix.Bots.Commands
                     x.AuditLogReason = $"Changed by {ctx.User.Username} ({ctx.User.Id})";
                 });
 
-                var emoji = DiscordEmoji.FromName(ctx.Client, ":+1:");
-                await ctx.RespondAsync(emoji);
+                await ctx.RespondAsync($"{member.Username} nickname changed to {newName}");
             }
             catch (Exception)
             {
-                var emoji = DiscordEmoji.FromName(ctx.Client, ":-1:");
-                await ctx.RespondAsync(emoji);
+                await ctx.RespondAsync($"Unable to nickname {member.Username}");
             }
         }
     }

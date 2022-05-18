@@ -49,12 +49,14 @@ namespace SkwurlBotFix.Bots.Commands
         }
 
         [Command("patrick")]
+        [Hidden]
         public async Task Patrick(CommandContext ctx)
         {
             await ctx.Channel.SendMessageAsync("https://tenor.com/view/butt-i-luv-patrick-yea-gif-13484694").ConfigureAwait(false);
         }
 
         [Command("lore")]
+        [Hidden]
         [RequireRoles(RoleCheckMode.Any, "Lore Chad")]
         public async Task LoreChad(CommandContext ctx)
         {
@@ -62,6 +64,7 @@ namespace SkwurlBotFix.Bots.Commands
         }
 
         [Command("bungus")]
+        [Hidden]
         public async Task BUNGUS(CommandContext ctx)
         {
             var x = "https://tenor.com/view/wiggly-green-mushrooms-risk-of-rain2-gif-23657855";
