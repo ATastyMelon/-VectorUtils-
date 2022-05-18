@@ -48,7 +48,6 @@ namespace SkwurlBotFix.Bots.Commands
         public async Task KickMembers(CommandContext ctx, DiscordMember member, string reason)
         {
             await ctx.TriggerTypingAsync();
-            DiscordGuild guild = member.Guild;
 
             try
             {

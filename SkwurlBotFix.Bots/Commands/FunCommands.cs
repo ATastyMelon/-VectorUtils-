@@ -68,5 +68,12 @@ namespace SkwurlBotFix.Bots.Commands
 
             await ctx.Channel.SendMessageAsync($"I LOVE BUNGUS {x}");
         }
+
+        [Command("sad")]
+        [Hidden]
+        public async Task Sad(CommandContext ctx)
+        {
+            await ctx.Channel.SendMessageAsync("https://tenor.com/view/crying-black-guy-meme50fps-interpolated-interpolated-crying-black-guy-crying-crying-black-guy-gif-23747218");
+        }
     }
 }

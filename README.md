@@ -2,6 +2,6 @@
 
 ![](VectorUtils.png)
 
-This is the GitHub page fpr my <Vector Utils> Discord bot
+This is the GitHub page fpr my <Vector> Utils Discord bot
 
-I like the idea of have my code open source, so I made this bot open source
+I like the idea of having my code open source, so that is why this bot is open source

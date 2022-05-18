@@ -102,7 +102,7 @@ namespace SkwurlBotFix.Bots
         private async Task OnHeartbeat(DiscordClient sender, HeartbeatEventArgs e)
         {
             _beats++;
-            var x = new DiscordActivity($";help | <Vector Utils>");
+            var x = new DiscordActivity($";help | <Vector> Utils");
             await Client.UpdateStatusAsync(x, UserStatus.Online, DateTimeOffset.MaxValue);
         }
 
