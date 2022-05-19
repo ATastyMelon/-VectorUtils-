@@ -1,4 +1,4 @@
-## <Vector> Utils
+## Vector Utils
 
 ![](VectorUtils.png)
 
